@@ -64,12 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Flowers\Flower.cs" />
+    <Compile Include="Assets\_Scripts\BGEffectScript.cs" />
+    <Compile Include="Assets\_Scripts\BGSoundScript.cs" />
     <Compile Include="Assets\_Scripts\DragDropScript.cs" />
     <Compile Include="Assets\_Scripts\FlowerAtlus.cs" />
+    <Compile Include="Assets\_Scripts\GuideSlotScript.cs" />
     <Compile Include="Assets\_Scripts\ItemSlotScript.cs" />
+    <Compile Include="Assets\_Scripts\PlayerData\FlowersUnlocked.cs" />
     <Compile Include="Assets\_Scripts\RandomizeButtonScript.cs" />
     <Compile Include="Assets\_Scripts\RandomizerScript.cs" />
-    <Compile Include="Assets\SceneController.cs" />
+    <Compile Include="Assets\_Scripts\SceneController.cs" />
+    <Compile Include="Assets\_Scripts\TimerScript.cs" />
+    <Compile Include="Assets\REMEMBER_CREDIT.cs" />
     <Compile Include="Assets\Scenes\SceneChanger.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

@@ -11,6 +11,7 @@ public class ItemSlotScript : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null) //Check if the drop left an item
         {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition; //Set dropped items position to this postion
+            this.gameObject.GetComponent<AudioSource>().Play();
         }
     }
 }

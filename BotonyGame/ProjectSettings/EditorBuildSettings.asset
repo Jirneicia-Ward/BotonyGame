@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OptionsMenu.unity
     guid: 843e374cc7db64c41b05f6ab5eb33c86
+  - enabled: 1
+    path: Assets/Scenes/FlowerCreationDemo.unity
+    guid: 0919b750113aee240a26c2e539ea45a3
+  - enabled: 1
+    path: Assets/Scenes/TestsMenu.unity
+    guid: 6f8545a34ba125446a04d6033256956c
+  - enabled: 1
+    path: Assets/Scenes/DragDropInventoryDemo.unity
+    guid: 59b5a2fc45c9ad642b4d8e863f4b36af
+  - enabled: 1
+    path: Assets/Scenes/GuideBookDemo.unity
+    guid: 3c3c6ef3fa688a741b9d8488ec840efd
   m_configObjects: {}

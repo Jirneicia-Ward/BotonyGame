@@ -8,31 +8,39 @@ public class RandomizeButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject text;
-    public GameObject FlowerCreator;
-    public GameObject sprite;
-    public GameObject FlowerAtlus;
-    public GameObject flowerDescrption;
+    public GameObject text; //Genome Text Area
+    public GameObject FlowerCreator;  //Game object with script for for Flower Atlus and Randomizer 
+    public GameObject sprite;        //Flower Spite Area
+    public GameObject FlowerAtlus;   //Same as FLower Creator
+    public GameObject flowerDescrption;  //Flower Description Area
+    public GameObject unlockedFlowers;    //Holds script for unlocked flowers
 
-    void Start()
-    {
-        
-    }
+    public delegate void ClickAction();           // Event 
+    public static event ClickAction OnClicked;    // Event Variable that is subbed to and sent out.
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void createPlant()
     {
-        Flower flower;
+        Flower flower;//Temp flower holder
 
-        string genome = FlowerCreator.GetComponent<RandomizerScript>().RandomGenome();
-        text.GetComponent<TextMeshProUGUI>().text = genome;
+        string genome = FlowerCreator.GetComponent<RandomizerScript>().RandomGenome();  //Create Genome and store it
+        text.GetComponent<TextMeshProUGUI>().text = genome;                            //Set text to Genome
         flower = FlowerAtlus.GetComponent<FlowerAtlus>().findFlowerData(genome); // Check if flower is right
-        sprite.GetComponent<SpriteRenderer>().sprite = flower.flowerSprite;
+        sprite.GetComponent<SpriteRenderer>().sprite = flower.flowerSprite;    //Set sprite to flower Sprite
+        addFlowerToDiscovered(genome);          //Add flower to discovered list
         
+    }
+
+    public void addFlowerToDiscovered(string genome)  //Checks if flower has been discovered before and adds it to list if not
+    {
+        if (genome.Contains("sS") || genome.Contains("Ss"))   //Edit genome if medium stem to match flower object
+        {
+            genome = genome.Substring(0, 3) + "Ss or " + genome.Substring(0,3) + "sS";
+        }
+        if (!unlockedFlowers.GetComponent<FlowersUnlocked>().checkIfFlowerUnlocked(genome)) //If not unlocked yet add and send event
+        {
+            unlockedFlowers.GetComponent<FlowersUnlocked>().addFlowerToUnlocks(genome);
+            OnClicked();    //Send out event notification
+        }
     }
 }

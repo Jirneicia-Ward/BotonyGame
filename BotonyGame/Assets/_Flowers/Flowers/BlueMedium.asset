@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3887c0bbcf5ce0d44806c6426792ba45, type: 3}
   m_Name: BlueMedium
   m_EditorClassIdentifier: 
-  genome: ryBSs or RyBsS
+  genome: ryBSs or ryBsS
   flowerName: 
   flowerSprite: {fileID: 6296732610729150185, guid: 62ff82ab7e515864c8d0a0f6a3ba8160,
     type: 3}
