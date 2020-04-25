@@ -9,7 +9,6 @@ public class RandomizeButtonScript : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject text; //Genome Text Area
-    public GameObject FlowerCreator;  //Game object with script for for Flower Atlus and Randomizer 
     public GameObject sprite;        //Flower Spite Area
     public GameObject FlowerAtlus;   //Same as FLower Creator
     public GameObject flowerDescrption;  //Flower Description Area
@@ -23,7 +22,7 @@ public class RandomizeButtonScript : MonoBehaviour
     {
         Flower flower;//Temp flower holder
 
-        string genome = FlowerCreator.GetComponent<RandomizerScript>().RandomGenome();  //Create Genome and store it
+        string genome = this.gameObject.GetComponent<RandomizerScript>().RandomGenome();  //Create Genome and store it
         text.GetComponent<TextMeshProUGUI>().text = genome;                            //Set text to Genome
         flower = FlowerAtlus.GetComponent<FlowerAtlus>().findFlowerData(genome); // Check if flower is right
         sprite.GetComponent<SpriteRenderer>().sprite = flower.flowerSprite;    //Set sprite to flower Sprite

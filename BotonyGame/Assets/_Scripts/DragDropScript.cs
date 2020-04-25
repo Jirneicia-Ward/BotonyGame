@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DragDropScript : MonoBehaviour, IPointerDownHandler, IEndDragHandler, IBeginDragHandler, IDragHandler
 {
     private RectTransform rectTransform;  //The location of this image
-    [SerializeField] private Canvas canvas;  //The Cancas this image is on
+    [SerializeField] public Canvas canvas;  //The Cancas this image is on
     private CanvasGroup canvasGroup;        //The canvas group controls alpha and raycasting
 
     private void Awake()
